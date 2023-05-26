@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="text-center">T-rucker</h1>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section>
+        <h2>About Us</h2>
+        <p>For any inquiries, contact our support group.</p>
+    </section>
+    
+    <form class="form_container" method="POST">
+      {% csrf_token %}
+      <div class="logo_container"></div>
+      <div class="title_container">
+        <p class="title">Login to your Account</p>
+        <span class="subtitle">Get started with T-rucker, just create an account and enjoy the experience.</span>
+      </div>
+      <br>
+      <div class="input_container">
+        <label class="input_label" for="id_name">Name</label>
+        <input id="id_name" class="input_field" type="text" name="name" maxlength="100">
+      </div>
+      <div class="input_container">
+        <label class="input_label" for="id_email">Email</label>
+        <input id="id_email" class="input_field" type="email" name="email" maxlength="100" required>
+      </div>
+      <div class="input_container">
+        <label class="input_label" for="id_username">Username</label>
+        <textarea id="id_username" class="input_field" name="username" required></textarea>
+      </div>
+      <div class="button_container">
+        <button type="submit" class="button">Login</button>
+      </div>
+      <div class="links_container">
+        <a href="#" class="link">Forgot password?</a>
+        <a href="#" class="link">Create an account</a>
+      </div>
+    </form>
+</body>
+</html>
