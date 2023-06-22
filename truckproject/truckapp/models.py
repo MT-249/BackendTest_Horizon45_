@@ -16,9 +16,10 @@ class Driver(models.Model):
 class Truck(models.Model):
     number_plate = models.CharField(max_length=100, unique=True)
     truck_registration_number = models.CharField(max_length=100, unique=True)
-    type = models.CharField(max_length=100)
+    truck_type = models.CharField(max_length=100)
     year = models.IntegerField()
     color = models.CharField(max_length=100)
+    driver = models.ForeignKey('Driver', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.number_plate
@@ -26,6 +27,7 @@ class Truck(models.Model):
 
 class Languages(models.Model):
     language = models.CharField(max_length=100)
+    driver = models.ForeignKey('Driver', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.language
@@ -33,6 +35,7 @@ class Languages(models.Model):
 
 class City(models.Model):
     city = models.CharField(max_length=100)
+    driver = models.ForeignKey('Driver', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.city
@@ -40,6 +43,7 @@ class City(models.Model):
 
 class District(models.Model):
     district = models.CharField(max_length=100)
+    driver = models.ForeignKey('Driver', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.district

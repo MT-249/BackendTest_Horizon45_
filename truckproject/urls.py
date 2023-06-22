@@ -17,9 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from truckapp.views import index
+from .views import DriverListAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index,name="index"),
 
 ]
+
+urlpatterns = [
+    path('drivers/', DriverListAPIView.as_view(), name='driver-list'),
+]
+

@@ -9,4 +9,11 @@ def contact_view(request):
     # Other view logic...
     return render(request, 'T-rucker.html', {'form': form})
 
+from rest_framework import generics
+from .models import Driver
+from .serializers import DriverSerializer
+
+class DriverListAPIView(generics.ListAPIView):
+    queryset = Driver.objects.all()
+    serializer_class = DriverSerializer
 
