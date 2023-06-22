@@ -17,3 +17,6 @@ class DriverListAPIView(generics.ListAPIView):
     queryset = Driver.objects.all()
     serializer_class = DriverSerializer
 
+class DriverCreateAPIView(generics.CreateAPIView):
+    queryset = Driver.objects.all()
+    serializer_class = DriverSerializer
