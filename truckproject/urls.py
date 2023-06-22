@@ -17,7 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from truckapp.views import index
-from .views import DriverListAPIView
+from django.urls import path
+from django.urls import include, path
+from truckapp.views import DriverListAPIView, DriverRetrieveAPIView, DriverCreateAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +29,7 @@ urlpatterns = [
 
 urlpatterns = [
     path('drivers/', DriverListAPIView.as_view(), name='driver-list'),
+    path('drivers/<int:pk>/', DriverRetrieveAPIView.as_view(), name='driver-detail'),
+    path('drivers/create/', DriverCreateAPIView.as_view(), name='driver-create'),
+    path('api/', include('truckapp.urls')),
 ]
-
