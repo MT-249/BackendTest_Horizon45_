@@ -24,10 +24,6 @@ from truckapp.views import DriverListAPIView, DriverRetrieveAPIView, DriverCreat
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index,name="index"),
-
-]
-
-urlpatterns = [
     path('drivers/', DriverListAPIView.as_view(), name='driver-list'),
     path('drivers/<int:pk>/', DriverRetrieveAPIView.as_view(), name='driver-detail'),
     path('drivers/create/', DriverCreateAPIView.as_view(), name='driver-create'),
